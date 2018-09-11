@@ -35,7 +35,7 @@ const loadFile = (request, response, localPath, fileType) => {
       'Content-Range': `bytes ${start}-${end}/${total}`,
       'Accept-Ranges': 'bytes',
       'Content-Length': chunksize,
-      'Content-Type': 'video/mp4',
+      'Content-Type': fileType,
     });
 
     const stream = fs.createReadStream(file, { start, end });
